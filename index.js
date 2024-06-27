@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const path = require('path');
 
 // importing routes
 const itemRoutes = require('./routes/item');
@@ -8,6 +9,9 @@ const itemRoutes = require('./routes/item');
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
+
+//Using Express Static Middlewares to load static files
+app.use(express.static(path.join(__dirname, './public')));
 
 
 app.get('/', (req, res) => {
