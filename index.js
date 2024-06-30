@@ -11,12 +11,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 
 //Using Express Static Middlewares to load static files
-app.use(express.static(path.join(__dirname, './public')));
+//app.use(express.static(path.join(__dirname, './public')));
+
+// Setting middleware Engines
+app.set('views', path.join(__dirname, './views'));
+app.set('view engine', 'pug');
 
 
-app.get('/', (req, res) => {
-    res.send("Hello World");
-})
+app.get('/home', (req, res) => {
+    res.render('home',{
+        title: 'CRUD App',
+        message: 'Welcome to the CRUD App!'
+    });
+});
 
 
 // Routes
