@@ -41,14 +41,36 @@
             color: #F7F9FC;
             padding: 10px;
         }
+        .item {
+            margin: 2px;
+            padding: 5px;
+            background-color: #555555;
+            color: #F7F9FC;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            display: inline-block;
+            vertical-align: middle;
+            transform: translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            backface-visibility: hidden;
+            transition-duration: 0.3s;
+            transition-property: transform;
+        }
+        .item:hover,
+        .item:focus,
+        .item:active {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
     <h2><i>welcome to the home page</i></h2>
     <div class="navbar">
-        <div class="item1">Home</div>
-        <div class="item3">Menu</div>
-        <div class="item2">Features</div>
+        <div class="item">Home</div>
+        <div class="item">Menu</div>
+        <div class="item">Features</div>
         
     </div>
     <div>
